@@ -1,32 +1,32 @@
-import os
+# import os
 
-with open(os.path.join(os.path.dirname(__file__), 'data/day3.txt'),'r') as file:
+# with open(os.path.join(os.path.dirname(__file__), 'data/day3.txt'),'r') as file:
     
-    for line in file:
-        intervalle = [2, -2]
-        num_location = 0
-        list_of_locations = set()
+#     for line in file:
+#         start_index = [0, 1]
+#         num_location = 0
+#         list_of_locations = set()
        
-        for i in intervalle:
-            x = 0
-            y = 0
-              
-            for direction in line[::i]:
+#         for i in start_index:
+#             x = 0
+#             y = 0
+#             list_of_locations.add((x,y)) #start location
+#             for direction in line[i::2]:
                 
-                if direction == '^':
-                    y += 1
-                elif direction == 'v':
-                    y -= 1
-                elif direction == '>':
-                    x += 1
-                elif direction == '<':
-                    x -= 1
-                list_of_locations.add((x,y))
-                print((x,y))       
-        print(len(list_of_locations))  
+#                 if direction == '^':
+#                     y += 1
+#                 elif direction == 'v':
+#                     y -= 1
+#                 elif direction == '>':
+#                     x += 1
+#                 elif direction == '<':
+#                     x -= 1
+#                 list_of_locations.add((x,y))
+#         print(list_of_locations)       
+#         print(len(list_of_locations))  
 
 
-
+print(97%5)
 
 
 
