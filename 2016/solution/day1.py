@@ -29,4 +29,3 @@ with open(os.path.join(os.path.dirname(__file__), '../data/day1.txt'),'r') as fi
         
 
 
-print(2%4)
