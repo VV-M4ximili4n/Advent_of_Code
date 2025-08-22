@@ -1,32 +1,44 @@
-# import os
+import os
 
-# with open(os.path.join(os.path.dirname(__file__), 'data/day3.txt'),'r') as file:
+with open(os.path.join(os.path.dirname(__file__), 'data/day3.txt'),'r') as file:
     
-#     for line in file:
-#         start_index = [0, 1]
-#         num_location = 0
-#         list_of_locations = set()
-       
-#         for i in start_index:
-#             x = 0
-#             y = 0
-#             list_of_locations.add((x,y)) #start location
-#             for direction in line[i::2]:
-                
-#                 if direction == '^':
-#                     y += 1
-#                 elif direction == 'v':
-#                     y -= 1
-#                 elif direction == '>':
-#                     x += 1
-#                 elif direction == '<':
-#                     x -= 1
-#                 list_of_locations.add((x,y))
-#         print(list_of_locations)       
-#         print(len(list_of_locations))  
+    for line in file:
+        
+        santa_pos = (0, 0)
+        robo_pos = (0, 0)
+        visited = set()
+        visited.add(santa_pos)  # beide starten am selben Ort
+
+        for i, direction in enumerate(line):
+            if i % 2 == 0:
+                # Santa ist dran wenn index gerade
+                x, y = santa_pos
+            else:
+                # Robo-Santa ist dran wenn index ungerade
+                x, y = robo_pos
+
+            if direction == '^':
+                y += 1
+            elif direction == 'v':
+                y -= 1
+            elif direction == '>':
+                x += 1
+            elif direction == '<':
+                x -= 1
+
+            new_pos = (x, y)
+            visited.add(new_pos)
+
+            if i % 2 == 0:
+                santa_pos = new_pos
+            else:
+                robo_pos = new_pos
+
+print(len(visited))
 
 
-print(97%5)
+
+
 
 
 
